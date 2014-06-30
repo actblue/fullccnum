@@ -1,0 +1,27 @@
+{
+  "name": "Fullccnum",
+  "version": "0.0.1",
+  "description": "Use the Luhn algorithm to validate whether a number is a valid credit card number. Also includes helpers to scrub spaces, dashes, and the like.",
+  "main": "lib/fullccnum.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/actblue/fullccnum.git"
+  },
+  "keywords": [
+    "credit cards",
+    "luhn",
+    "validation"
+  ],
+  "author": "ActBlue Technical Services",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/actblue/fullccnum/issues"
+  },
+  "homepage": "https://github.com/actblue/fullccnum"
+}
