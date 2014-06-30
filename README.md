@@ -13,3 +13,7 @@ Use the Luhn algorithm to validate whether a number is a valid credit card numbe
 		} else {
 			logger.debug('This is not a valid credit card.');
 		}
+
+## Run the tests
+
+		npm test
