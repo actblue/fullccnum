@@ -17,3 +17,5 @@ Use the Luhn algorithm to validate whether a number is a valid credit card numbe
 ## Run the tests
 
 		npm test
+
+[npm listing](https://www.npmjs.org/package/fullccnum)
