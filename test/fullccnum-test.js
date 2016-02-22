@@ -22,6 +22,12 @@ describe('Fullccnum', function() {
       });
     });
 
+    describe('given a numeric input', function() {
+      it('should return the input as a string', function() {
+        Fullccnum.scrubNonDigits(123456789).should.eql('123456789');
+      });
+    });
+
     describe('given an input with only non-digits', function() {
       it('should return an empty string', function() {
         Fullccnum.scrubNonDigits('Ab,. !@#$<>-_').should.eql('');
