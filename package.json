@@ -1,6 +1,6 @@
 {
   "name": "fullccnum",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Use the Luhn algorithm to validate whether a number is a valid credit card number. Also includes helpers to scrub spaces, dashes, and the like.",
   "main": "lib/fullccnum.js",
   "directories": {
