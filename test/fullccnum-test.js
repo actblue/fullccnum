@@ -28,6 +28,12 @@ describe('Fullccnum', function() {
       });
     });
 
+    describe('given a boolean input', function() {
+      it('should return the input as given', function() {
+        Fullccnum.scrubNonDigits(true).should.be.true;
+      });
+    });
+
     describe('given an input with only non-digits', function() {
       it('should return an empty string', function() {
         Fullccnum.scrubNonDigits('Ab,. !@#$<>-_').should.eql('');
