@@ -47,6 +47,13 @@ describe('Fullccnum', function() {
     });
   });
 
+  describe('cardNumbersInText', function() {
+    it('should find the card number but not the tx', function() {
+      const sampleText = '<card>348771682068975</card><txid>41111111111111111111</txid><unrelated>4111111111111112</unrelated>';
+      Fullccnum.cardNumbersInText(sampleText).should.eql(['348771682068975']);
+    })
+  });
+
   describe('validate', function() {
     describe('length', function() {
       describe('a valid 16-digit number', function() {
