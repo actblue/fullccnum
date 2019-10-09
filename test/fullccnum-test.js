@@ -51,6 +51,11 @@ describe('Fullccnum', function() {
     it('should find the card number but not the tx', function() {
       const sampleText = '<card>348771682068975</card><txid>41111111111111111111</txid><unrelated>4111111111111112</unrelated>';
       Fullccnum.cardNumbersInText(sampleText).should.eql(['348771682068975']);
+    });
+
+    it('should find a 19-digit card number but not the tx', function () {
+      const sampleText = '<card>4716952655639547799</card><txid>41111111111111111111</txid><unrelated>4111111111111112</unrelated>';
+      Fullccnum.cardNumbersInText(sampleText).should.eql(['4716952655639547799']);
     })
   });
 
@@ -68,6 +73,12 @@ describe('Fullccnum', function() {
         });
       });
 
+      describe('a valid 19-digit Visa number', function () {
+        it('should return true', function () {
+          Fullccnum.isValid('4716952655639547799').should.be.true;
+        });
+      });
+
       describe('checking lower limit', function() {
         it('should verify at least 13 digits', function() {
           Fullccnum.isValid('111111111212').should.be.false;
@@ -76,9 +87,9 @@ describe('Fullccnum', function() {
       });
 
       describe('checking the upper limit', function() {
-        it('should verify no more than 16 digits', function() {
+        it('should verify no more than 19 digits', function() {
           Fullccnum.isValid('4111111111111111').should.be.true;
-          Fullccnum.isValid('41111111111111121').should.be.false;
+          Fullccnum.isValid('41111111111111121234').should.be.false;
         });
       });
     });
